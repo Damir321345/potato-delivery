@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- SEO: название и описание для поисковиков -->
-  <title>Картофель.Доставка — свежий картофель с огорода с доставкой по Орску и области</title>
-  <meta name="description" content="Свежий картофель с огорода. Доставка по Орску, Новоорску, Новотроицку, Гаю, Адамовке и другим городам. Продажа мешками от 35 кг. Закажи прямо сейчас">
+  <!-- SEO -->
+  <title>Картофель.Доставка — свежий картофель с огорода, Орск</title>
+  <meta name="description" content="Свежий картофель мешками от 35 кг. Доставка по Орску, Новоорску, Новотроицку, Гаю. Закажи за 1 клик">
 
-  <!-- Иконка для добавления на экран -->
+  <!-- Иконка -->
   <link rel="icon" href="https://i.imgur.com/5vX3PzD.png" sizes="any" type="image/png">
   <link rel="apple-touch-icon" href="https://i.imgur.com/5vX3PzD.png">
   <meta name="theme-color" content="#f5f0e6">
 
   <style>
-    /* Фон — как деревенский рынок */
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background: #f5f0e6 url('https://raw.githubusercontent.com/ali-sauna/potato-bg/main/farm-bg.jpg') no-repeat center top;
@@ -24,92 +23,87 @@
       text-align: center;
     }
 
-    /* Общая обёртка */
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 15px;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       display: flex;
-      gap: 30px;
+      gap: 25px;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    /* Заголовок */
     h1 {
       color: #8B4513;
-      font-size: 2.5em;
-      margin: 0 0 10px 0;
+      font-size: 2.3em;
+      margin: 0 0 5px 0;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     p.subtitle {
       font-size: 1.1em;
-      margin: 5px 0 30px;
+      margin: 5px 0 25px;
       color: #6b5a44;
     }
 
-    /* Левый блок — фото картофеля */
     .left {
       flex: 1;
-      min-width: 300px;
+      min-width: 260px;
     }
 
     .potato-img {
-      width: 280px;
+      width: 260px;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
       transition: transform 0.3s ease;
     }
 
     .potato-img:hover {
-      transform: translateY(-10px) rotate(5deg);
+      transform: translateY(-8px) rotate(5deg);
       cursor: pointer;
     }
 
-    /* Прыгающая картофелина */
     .jump {
       display: inline-block;
       transition: transform 0.2s ease;
     }
 
     .jump:hover {
-      transform: translateY(-15px) rotate(10deg);
+      transform: translateY(-12px) rotate(10deg);
     }
 
-    /* Правый блок — текст и кнопка */
     .right {
       flex: 1;
-      min-width: 300px;
+      min-width: 280px;
       text-align: left;
-      padding: 20px;
+      padding: 15px;
     }
 
     .right h2 {
       color: #5d4037;
-      font-size: 1.4em;
-      margin: 20px 0 10px;
+      font-size: 1.3em;
+      margin: 18px 0 8px;
     }
 
     .right p {
-      font-size: 1.1em;
+      font-size: 1em;
       line-height: 1.6;
       color: #5d4037;
     }
 
-    /* Кнопка "Заказать" */
     .btn {
       display: block;
-      width: 200px;
-      margin: 30px auto 0;
-      padding: 14px;
+      width: 190px;
+      margin: 25px auto 0;
+      padding: 13px;
       background: #4CAF50;
       color: white;
-      font-size: 1.2em;
+      font-size: 1.15em;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -123,7 +117,6 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
-    /* Модальное окно */
     .modal {
       display: none;
       position: fixed;
@@ -138,12 +131,12 @@
 
     .modal-content {
       background-color: #fff;
-      margin: 10% auto;
-      padding: 30px 25px;
+      margin: 12% auto;
+      padding: 25px 20px;
       border-radius: 12px;
       width: 90%;
-      max-width: 500px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 460px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       animation: slideIn 0.3s ease;
       text-align: center;
     }
@@ -151,17 +144,47 @@
     .close {
       color: #aaa;
       float: right;
-      font-size: 30px;
+      font-size: 28px;
       font-weight: bold;
       cursor: pointer;
-      line-height: 1;
     }
 
     .close:hover {
       color: #000;
     }
 
-    /* Анимации */
+    .action-btn {
+      display: block;
+      width: 210px;
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .copy-btn {
+      background: #FF9800;
+      color: white;
+    }
+
+    .copy-btn:hover {
+      background: #e68900;
+    }
+
+    .call-btn {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .call-btn:hover {
+      background: #45a049;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -172,46 +195,35 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    /* Адаптивность под смартфоны */
     @media (max-width: 768px) {
       .container {
+        margin: 20px auto;
+        padding: 10px;
         flex-direction: column;
-        padding: 15px;
       }
       h1 {
         font-size: 2em;
       }
-      p.subtitle {
-        font-size: 1.1em;
-      }
-      .right,
-      .left {
-        min-width: 280px;
+      .right, .left {
+        min-width: 260px;
         text-align: center;
       }
       .btn {
-        width: 220px;
-        font-size: 1.3em;
-        padding: 16px;
+        width: 200px;
+        font-size: 1.25em;
+        padding: 14px;
       }
       .potato-img {
-        width: 240px;
+        width: 230px;
       }
       .modal-content {
-        width: 95%;
+        width: 90%;
         margin: 15% auto;
         padding: 20px;
       }
-      .modal-content h3 {
-        font-size: 1.4em;
-      }
-      .modal-content p {
-        font-size: 1.2em;
-      }
-      .modal-content button,
-      .modal-content a {
-        width: 200px !important;
-        font-size: 1em;
+      .action-btn {
+        width: 200px;
+        font-size: 1.1em;
         padding: 12px;
       }
     }
@@ -219,101 +231,66 @@
 </head>
 <body>
 
-  <!-- Основной контент -->
   <div class="container">
-    <!-- Лево: фото картофеля -->
     <div class="left">
-      <img src="potato.jpeg" alt="Свежий картофель в мешке" class="potato-img" />
-      <p><span class="jump">🥔</span> Наведи, чтобы прыгнула!</p>
+      <img src="potato.jpeg" alt="Свежий картофель" class="potato-img" />
+      <p><span class="jump">🥔</span> Наведи — прыгнет!</p>
     </div>
 
-    <!-- Право: текст и кнопка -->
     <div class="right">
       <h1>Картофель.Доставка</h1>
       <p class="subtitle">Свежий. Честный. С огорода.</p>
       
-      <h2>Почему мы?</h2>
+      <h2>Почему?</h2>
       <p>
-        Свежий картофель с собственных полей. Выращен в экологически чистых условиях, без химии. 
-        Доставляем только в мешках по 35–40 кг — как настоящий фермерский урожай.
+        Картофель с наших полей. Без химии. Мешки по 35–40 кг.
       </p>
       
       <h2>Доставка</h2>
       <p>
-        🚚 Доставка по <strong>Орску</strong> — быстро и бесплатно при заказе от 3 мешков.
-        <br>
-        <span style="font-size: 0.9em; color: #888; font-style: italic;">
-          Также доставляем в Новоорске, Новотроицке, Гае, Адамовке и других близлежащих населённых пунктах.
-        </span>
+        🚚 По <strong>Орску</strong> — бесплатно от 3 мешков.<br>
+        <small style="color:#888">Также: Новоорск, Новотроицк, Гай, Адамовка и др.</small>
       </p>
 
       <button id="orderBtn" class="btn">Заказать</button>
     </div>
   </div>
 
-  <!-- Модальное окно — только телефон -->
   <div id="orderModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h3>Свяжитесь с нами</h3>
-      <p style="font-size: 1.3em; color: #4a3c2a; margin: 20px 0;">
+      <p style="font-size:1.25em; color:#4a3c2a; margin:15px 0;">
         📞 <strong>+7 (919) 844-87-71</strong>
       </p>
-
-      <!-- Кнопка копирования -->
-      <button onclick="copyPhone()" class="btn-mobile-action">
-        📋 Скопировать номер
-      </button>
-
-      <!-- Кнопка звонка -->
-      <a href="tel:+79198448771" class="btn-mobile-action">
-        📞 Позвонить сейчас
-      </a>
+      <button onclick="copyPhone()" class="action-btn copy-btn">📋 Скопировать</button>
+      <a href="tel:+79198448771" class="action-btn call-btn">📞 Позвонить</a>
     </div>
   </div>
 
-  <!-- Скрипты -->
   <script>
-    // Анимация: картофелина прыгает при наведении
     document.querySelector('.jump').addEventListener('mouseover', function() {
-      this.style.transform = 'translateY(-15px)';
-      setTimeout(() => {
-        this.style.transform = 'translateY(0)';
-      }, 300);
+      this.style.transform = 'translateY(-12px)';
+      setTimeout(() => this.style.transform = 'translateY(0)', 300);
     });
 
-    // Функция копирования номера
     function copyPhone() {
-      const phone = "+7 922 532-61-00";
-      navigator.clipboard.writeText(phone).then(() => {
-        alert("✅ Номер скопирован: " + phone);
-      }).catch(err => {
-        alert("❌ Не удалось скопировать. Вручную: +7 922 532-61-00");
-        console.error("Ошибка копирования: ", err);
-      });
+      const phone = "+7 919 844-87-71";
+      navigator.clipboard.writeText(phone).then(
+        () => alert("✅ Номер скопирован: " + phone),
+        () => alert("❌ Не удалось. Вручную: " + phone)
+      );
     }
 
-    // Управление модальным окном
     const modal = document.getElementById("orderModal");
     const btn = document.getElementById("orderBtn");
     const span = document.querySelector(".close");
 
-    btn.onclick = function() {
-      modal.style.display = "block";
-    };
-
-    span.onclick = function() {
-      modal.style.display = "none";
-    };
-
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
+    btn.onclick = () => modal.style.display = "block";
+    span.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+      if (event.target === modal) modal.style.display = "none";
     };
   </script>
-
 </body>
 </html>
-
-
