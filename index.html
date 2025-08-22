@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- SEO: название и описание для поисковиков -->
+  <title>Картофель.Доставка — свежий картофель с огорода с доставкой по Орску и области</title>
+  <meta name="description" content="Свежий картофель с огорода. Доставка по Орску, Новоорску, Новотроицку, Гаю, Адамовке и другим городам. Продажа мешками от 35 кг. Закажи прямо сейчас">
+
+  <!-- Иконка для добавления на экран -->
+  <link rel="icon" href="https://i.imgur.com/5vX3PzD.png" sizes="any" type="image/png">
+  <link rel="apple-touch-icon" href="https://i.imgur.com/5vX3PzD.png">
+  <meta name="theme-color" content="#f5f0e6">
+
+  <style>
+    /* Фон — как деревенский рынок */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #f5f0e6 url('https://i.imgur.com/3JZ7fYl.jpg') no-repeat center top;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4a3c2a;
+      text-align: center;
+    }
+
+    /* Общая обёртка */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Заголовок */
+    h1 {
+      color: #8B4513;
+      font-size: 2.5em;
+      margin: 0 0 10px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p.subtitle {
+      font-size: 1.1em;
+      margin: 5px 0 30px;
+      color: #6b5a44;
+    }
+
+    /* Левый блок — фото картофеля */
+    .left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .potato-img {
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .potato-img:hover {
+      transform: translateY(-10px) rotate(5deg);
+      cursor: pointer;
+    }
+
+    /* Прыгающая картофелина */
+    .jump {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .jump:hover {
+      transform: translateY(-15px) rotate(10deg);
+    }
+
+    /* Правый блок — текст и кнопка */
+    .right {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+      padding: 20px;
+    }
+
+    .right h2 {
+      color: #5d4037;
+      font-size: 1.4em;
+      margin: 20px 0 10px;
+    }
+
+    .right p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #5d4037;
+    }
+
+    /* Кнопка "Заказать" */
+    .btn {
+      display: block;
+      width: 200px;
+      margin: 30px auto 0;
+      padding: 14px;
+      background: #4CAF50;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #45a049;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Модальное окно */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 30px 25px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: slideIn 0.3s ease;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Адаптивность под смартфоны */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      p.subtitle {
+        font-size: 1.1em;
+      }
+      .right,
+      .left {
+        min-width: 280px;
+        text-align: center;
+      }
+      .btn {
+        width: 220px;
+        font-size: 1.3em;
+        padding: 16px;
+      }
+      .potato-img {
+        width: 240px;
+      }
+      .modal-content {
+        width: 95%;
+        margin: 15% auto;
+        padding: 20px;
+      }
+      .modal-content h3 {
+        font-size: 1.4em;
+      }
+      .modal-content p {
+        font-size: 1.2em;
+      }
+      .modal-content button,
+      .modal-content a {
+        width: 200px !important;
+        font-size: 1em;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Основной контент -->
+  <div class="container">
+    <!-- Лево: фото картофеля -->
+    <div class="left">
+      <img src="potato.jpeg" alt="Свежий картофель в мешке" class="potato-img" />
+      <p><span class="jump">🥔</span> Наведи, чтобы прыгнула!</p>
+    </div>
+
+    <!-- Право: текст и кнопка -->
+    <div class="right">
+      <h1>Картофель.Доставка</h1>
+      <p class="subtitle">Свежий. Честный. С огорода.</p>
+      
+      <h2>Почему мы?</h2>
+      <p>
+        Свежий картофель с собственных полей. Выращен в экологически чистых условиях, без химии. 
+        Доставляем только в мешках по 35–40 кг — как настоящий фермерский урожай.
+      </p>
+      
+      <h2>Доставка</h2>
+      <p>
+        🚚 Доставка по <strong>Орску</strong> — быстро и бесплатно при заказе от 3 мешков.
+        <br>
+        <span style="font-size: 0.9em; color: #888; font-style: italic;">
+          Также доставляем в Новоорске, Новотроицке, Гае, Адамовке и других близлежащих населённых пунктах.
+        </span>
+      </p>
+
+      <button id="orderBtn" class="btn">Заказать</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно — только телефон -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Свяжитесь с нами</h3>
+      <p style="font-size: 1.3em; color: #4a3c2a; margin: 20px 0;">
+        📞 <strong>+7 (922) 532-61-00</strong>
+      </p>
+
+      <!-- Кнопка копирования -->
+      <button onclick="copyPhone()" class="btn-mobile-action">
+        📋 Скопировать номер
+      </button>
+
+      <!-- Кнопка звонка -->
+      <a href="tel:+79225326100" class="btn-mobile-action">
+        📞 Позвонить сейчас
+      </a>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
+  <script>
+    // Анимация: картофелина прыгает при наведении
+    document.querySelector('.jump').addEventListener('mouseover', function() {
+      this.style.transform = 'translateY(-15px)';
+      setTimeout(() => {
+        this.style.transform = 'translateY(0)';
+      }, 300);
+    });
+
+    // Функция копирования номера
+    function copyPhone() {
+      const phone = "+7 922 532-61-00";
+      navigator.clipboard.writeText(phone).then(() => {
+        alert("✅ Номер скопирован: " + phone);
+      }).catch(err => {
+        alert("❌ Не удалось скопировать. Вручную: +7 922 532-61-00");
+        console.error("Ошибка копирования: ", err);
+      });
+    }
+
+    // Управление модальным окном
+    const modal = document.getElementById("orderModal");
+    const btn = document.getElementById("orderBtn");
+    const span = document.querySelector(".close");
+
+    btn.onclick = function() {
+      modal.style.display = "block";
+    };
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+</html>
